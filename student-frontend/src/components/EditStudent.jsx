@@ -5,13 +5,6 @@ import { useNavigate } from 'react-router-dom';
 const EditStudent = ({ id }) => {
 
     const navigate = useNavigate();
-    const [students, setStudents] = useState({
-        name: "",
-        email: "",
-        regNo: "",
-        age: "",
-        mobileNo: ""
-    });
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -23,7 +16,7 @@ const EditStudent = ({ id }) => {
         try{
             const res =  await fetch(`http://localhost:8080/student/${id}`);
             const data = await res.json();
-            setStudents(data);
+            
             setName(data.name || "");
             setEmail(data.email || "");
             setRegNo(data.regNo || "");
