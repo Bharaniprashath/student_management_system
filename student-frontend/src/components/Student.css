@@ -1,0 +1,26 @@
+.student-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px black solid;
+    padding: 10px 20px;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    gap:5px;
+}
+
+h2{
+    text-align: center;
+}
+
+.delete-btn{
+    background-color: crimson;
+    color: white;
+}
+
+.edit-btn{
+    background-color: rgb(117, 230, 255);
+    color: black;
+}
+

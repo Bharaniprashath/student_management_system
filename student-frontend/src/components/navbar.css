@@ -1,0 +1,32 @@
+nav{
+    display: flex;
+    gap: 1rem;
+    background-color: rgb(31, 80, 226);
+    color: white;
+    width: 100vw;
+}
+
+nav ul{
+    list-style-type:none;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav a:hover{
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+nav a:focus{
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: 0.2s;
+}
