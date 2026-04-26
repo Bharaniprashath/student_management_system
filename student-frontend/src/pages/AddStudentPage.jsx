@@ -1,12 +1,11 @@
 import AddStudent from "../components/AddStudent"
 
-const AddProductPage = () => {
+const AddStudentPage = () => {
     return (
-        <>
-            <h1>Add Student Page</h1>
+        <div className="add-student-page">
             <AddStudent />
-        </>
+        </div>
     )
 }
 
-export default AddProductPage
+export default AddStudentPage

@@ -1,14 +1,55 @@
-.student-list{
+.student-details-page {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: auto 5%;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.student-details-container{
-    width:100vw;
-    margin-top: 30px;
-    margin:20px auto;
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 1.5rem;
+}
+
+.header-info h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+}
+
+.header-info p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.add-student-btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.add-student-btn span {
+    font-size: 1.25rem;
+    margin-right: 0.25rem;
+    line-height: 0;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.loading-state, .empty-state {
+    text-align: center;
+    padding: 4rem;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--border);
+    color: var(--text-muted);
+    font-size: 1.125rem;
 }
 
 button{
