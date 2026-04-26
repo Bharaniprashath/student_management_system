@@ -1,5 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import MainLayout from './Layouts/MainLayout'
 import StudentDetails from './pages/StudentDetails'
 import AddStudent from './pages/AddStudentPage'
@@ -9,6 +11,7 @@ import EditList from './pages/StudentsEditPage'
 function App() {
     return (
         <Router>
+            <ToastContainer position="top-right" autoClose={3000} />
             <Routes>
                 <Route path="/" element={<MainLayout />} >
                     <Route index element={<StudentDetails/>} />

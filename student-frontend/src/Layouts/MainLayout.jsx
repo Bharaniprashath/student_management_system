@@ -4,10 +4,14 @@ import './MainLayout.css'
 
 const MainLayout = () => {
     return (
-        <>
-        <Navbar />
-        <Outlet />
-        </>
+        <div className="layout-wrapper">
+            <Navbar />
+            <main className="main-content">
+                <div className="container">
+                    <Outlet />
+                </div>
+            </main>
+        </div>
     )
 }
 

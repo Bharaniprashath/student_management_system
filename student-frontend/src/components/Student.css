@@ -1,26 +1,116 @@
-.student-container{
+.student-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    border: 1px black solid;
-    padding: 10px 20px;
-    color: black;
-    background-color: white;
-    border-radius: 15px;
-    gap:5px;
+    gap: 1.25rem;
+}
+
+.student-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.student-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.student-avatar {
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.student-info-main h3 {
+    font-size: 1.125rem;
+    color: var(--text-main);
+    margin-bottom: 0.125rem;
+}
+
+.reg-no {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.student-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.info-item .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.info-item .value {
+    font-size: 0.9375rem;
+    color: var(--text-main);
+    word-break: break-all;
+}
+
+.student-card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.btn-edit, .btn-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background-color: #eff6ff;
+    color: var(--primary);
+}
+
+.btn-edit:hover {
+    background-color: #dbeafe;
+}
+
+.btn-delete {
+    background-color: #fef2f2;
+    color: var(--error);
+}
+
+.btn-delete:hover {
+    background-color: #fee2e2;
 }
 
 h2{
     text-align: center;
 }
-
-.delete-btn{
-    background-color: crimson;
-    color: white;
-}
-
-.edit-btn{
-    background-color: rgb(117, 230, 255);
-    color: black;
-}
-
