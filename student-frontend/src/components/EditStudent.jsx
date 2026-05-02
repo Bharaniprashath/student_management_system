@@ -4,6 +4,9 @@ import { useNavigate, useParams } from "react-router-dom"
 import { toast } from 'react-toastify'
 
 const EditStudent = () => {
+
+    const token = localStorage.getItem('token');
+
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -18,7 +21,12 @@ const EditStudent = () => {
         const fetchStudent = async () => {
             try {
                 setLoading(true);
-                const res = await fetch(`http://localhost:8080/student/${id}`);
+                const res = await fetch(`http://localhost:8080/student/${id}`,{
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
                 const data = await res.json();
                 setName(data.name);
                 setEmail(data.email);
@@ -49,6 +57,7 @@ const EditStudent = () => {
             await fetch(`http://localhost:8080/student/${id}`, {
                 method: "PUT",
                 headers: {
+                    "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(studentData)

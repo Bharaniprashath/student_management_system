@@ -20,7 +20,6 @@ public class StudentService {
         this.db = db;
     }
 
-
     public String greetings(){
         return "Hello welcome to student management systems";
     }

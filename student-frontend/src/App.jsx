@@ -7,6 +7,8 @@ import StudentDetails from './pages/StudentDetails'
 import AddStudent from './pages/AddStudentPage'
 import EditStudent from './pages/EditPage'
 import EditList from './pages/StudentsEditPage'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
 
 function App() {
     return (
@@ -14,11 +16,13 @@ function App() {
             <ToastContainer position="top-right" autoClose={3000} />
             <Routes>
                 <Route path="/" element={<MainLayout />} >
-                    <Route index element={<StudentDetails/>} />
+                    <Route path='/details' element={<StudentDetails/>} />
                     <Route path="/addstudent" element={<AddStudent/>}></Route>
                     <Route path="/students" element={<StudentDetails/>}></Route>
                     <Route path="/editstudent/:id" element={<EditStudent/>}></Route>
                     <Route path="/editstudent" element={<EditList/>}></Route>
+                    <Route index path='/login' element={<LoginPage />}></Route>
+                    <Route path='/register' element={<RegisterPage />}></Route>
                 </Route>
             </Routes>
         </Router>
