@@ -4,13 +4,20 @@ import { Link } from 'react-router-dom'
 import './StudentDetails.css' // Reuse the same styles
 
 const StudentsEditPage = () => {
+
+    const token = localStorage.getItem('token');
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const fetchProducts = async () => {
         try{
             setLoading(true);
-            const res =  await fetch("http://localhost:8080/student");
+            const res =  await fetch("http://localhost:8080/student", {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
             const data = await res.json();
             setStudents(data);
         } catch (error) {

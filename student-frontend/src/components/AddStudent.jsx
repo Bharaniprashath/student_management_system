@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify'
 
 const AddStudent = () => {
-
+    
+    const token = localStorage.getItem('token')
     const navigate = useNavigate();
 
     const [name, setName] = useState("");
@@ -26,6 +27,7 @@ const AddStudent = () => {
             await fetch("http://localhost:8080/student",{
                 method: "POST",
                 headers: {
+                    "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(studentData)

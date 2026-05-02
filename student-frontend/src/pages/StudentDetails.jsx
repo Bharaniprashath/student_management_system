@@ -5,13 +5,23 @@ import { Link } from 'react-router-dom';
 
 const StudentDetails = () => {
 
+    
     const [students, setStudents] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const fetchProducts = async () => {
         try{
             setLoading(true);
-            const res =  await fetch("http://localhost:8080/student");
+            
+            const token = localStorage.getItem('token');
+            console.log("Token at /student call:", token);
+
+            const res =  await fetch("http://localhost:8080/student",{
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
             const data = await res.json();
             setStudents(data);
         } catch (error) {

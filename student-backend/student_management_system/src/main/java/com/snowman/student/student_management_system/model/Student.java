@@ -1,5 +1,4 @@
 package com.snowman.student.student_management_system.model;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
